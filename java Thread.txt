@@ -1,0 +1,4 @@
+1 implement thread using Thread using class
+2 implement thread using Runnable interface
+3 print table of 5 and 100 with synchnorized mathod
+4 produces consumer problem with solution

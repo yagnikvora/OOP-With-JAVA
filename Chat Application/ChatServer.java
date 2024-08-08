@@ -25,6 +25,10 @@ public class ChatServer {
             while (true) {
                 // Receive a message from the client
                 clientMessage = in.readLine();
+                if(clientMessage== null){
+                    System.out.println("Client disconnected.");
+                    break;
+                }
                 System.out.println("Client: " + clientMessage);
 
                 // Send a message to the client

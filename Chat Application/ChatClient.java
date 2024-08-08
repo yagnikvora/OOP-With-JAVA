@@ -8,7 +8,7 @@ public class ChatClient {
         PrintWriter out = null;
         BufferedReader consoleInput = null;
         try {
-            
+
             socket = new Socket(args[0], Integer.parseInt(args[1]));
             System.out.println("Connected to the server.\n Type \"exit \" to end chat");
 
@@ -31,12 +31,16 @@ public class ChatClient {
 
                 // Receive a message from the server
                 serverMessage = in.readLine();
+                if (serverMessage == null) {
+                    System.out.println("Server has disconnected.");
+                    break;
+                }
                 System.out.println("Server: " + serverMessage);
             }
 
         } catch (IOException e) {
             e.printStackTrace();
-        } finally{
+        } finally {
             try {
                 socket.close();
                 in.close();
